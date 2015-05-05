@@ -1,5 +1,7 @@
 using Word2Vec
-using Base.Test
+using FactCheck
 
-# write your own tests here
-@test 1 == 1
+facts("Einfache tests") do
+    @fact wordcooc("a") => 0*eye(1)
+    @fact wordcooc("a a") => 2*eye(1)
+end
